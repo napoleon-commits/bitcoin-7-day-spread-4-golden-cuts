@@ -21,7 +21,6 @@ export default {
         updateDateAndPrice(){
             fetchCurrentBTCPrice().then(result => {
                 this.currentPrice = Number(Number((result.data.bpi.USD.rate).replace(',','')).toFixed(2))
-                this.$store.state.medianPrice = this.currentPrice;
             });
             this.currentDate = new Date().toLocaleDateString();
         },
